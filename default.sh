@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the device name
-device="Logitech G502 LIGHTSPEED Wireless Gaming Mouse"
+device=$(ratbagctl list | grep -E 'Logitech G502|Logitech G502 LIGHTSPEED Wireless Gaming Mouse' | awk -F: '{print $2}' | awk '{$1=$1};1')
 
 # Set the profile (0 is default)
 ratbagctl "$device" profile active set 0 --nocommit
