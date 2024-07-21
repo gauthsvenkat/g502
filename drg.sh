@@ -4,7 +4,7 @@
 device=$(ratbagctl list | grep -E 'Logitech G502|Logitech G502 LIGHTSPEED Wireless Gaming Mouse' | awk -F: '{print $2}' | awk '{$1=$1};1')
 
 # Set the profile
-ratbagctl "$device" profile active set 1 --nocommit
+ratbagctl "$device" profile active set 0 --nocommit
 
 # Set the DPI
 ratbagctl "$device" dpi set 1200 --nocommit
